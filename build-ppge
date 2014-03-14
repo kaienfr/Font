@@ -1,0 +1,4 @@
+export PPSSPPROOT="/Users/vm_mac/Desktop/ppsspp"
+cp chinese-ppge.txt chinese.txt
+cat korean-ui.txt $PPSSPPROOT/lang/ko_KR.ini > korean.txt 
+./atlastool ppge_atlasscript.txt ppge

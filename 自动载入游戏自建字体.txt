@@ -1,0 +1,21 @@
+1. Core\HLE\sceFont.cpp 文件中
+const std::string fontPath = "flash0:/font/";
+const std::string fontOverridePath = "ms0:/PSP/flash0/font/";
+后面加一个路径
+const std::string userfontPath = "disc0:/PSP_GAME/USRDIR/";
+
+2. 加入判断镜像中自定义字体zh_gb.pgf
+	for (size_t i = 0; i < ARRAY_SIZE(fontRegistry); i++) {
+		const FontRegistryEntry &entry = fontRegistry[i];
+		std::string fontFilename = userfontPath + entry.fileName; 
+		PSPFileInfo info = pspFileSystem.GetFileInfo(fontFilename);
+
+		if (!info.exists) {
+			// No user font, let's try override path.
+			fontFilename = fontOverridePath + entry.fileName;
+			info = pspFileSystem.GetFileInfo(fontFilename);
+		}
+
+3. 添加zh_gb.pgf到fontRegistry中开头处
+{ 0x288, 0x288, 0x2000, 0x2000, 0, 0, FONT_FAMILY_SANS_SERIF, FONT_STYLE_DB, 0, FONT_LANGUAGE_CHINESE, 0, 1, "zh_gb.pgf", "FTT-NewRodin Pro DB", 0, 0 },
+

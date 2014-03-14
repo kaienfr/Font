@@ -1,0 +1,23 @@
+字库系统结构:
+1. PPSSPP系统菜单  (ui_atlas) 
+2. ui_atlas_lowmem (<-新版已经不再需要)
+3. 游戏存档等文字 (ppge_atlas)
+
+关于字体的筛选和设置分别参见他们的script文件。
+chinese.txt作为学习文件供程序默认读取。
+
+游戏存档菜单ppge_atlas
+需要文件分别是: 
+ui_atlas.zim 到 assets\ 和 android\assets\
+ppge_atlas.cpp 和 ppge_atlas.h 到 Core\Util\
+
+模拟器界面菜单ui_atlas
+
+字库制作:
+(Windows) 运行脚本 buildfont.bat可以构建字库
+(Linux/IOS/MACOSX) 使用 build-ppge 和 build-ui
+
+(Windows) 运行copy2proj.bat 将所需文件复制到ppsspp工程项目中
+(Linux/IOS/MACOSX) 上使用 mvppge2proj 和 mvui2proj
+
+PS: 如需设置自定义字体文件名ppge_atlas.zim, 可以修改Core\Util\PPGeDraw.cpp 和 Core\Util\ppge_atlas.cpp

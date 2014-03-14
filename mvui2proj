@@ -1,0 +1,6 @@
+export PPSSPP="/Users/vm_mac/Desktop/ppsspp/" 
+mv ui_atlas.cpp ${PPSSPP}UI/
+mv ui_atlas.h ${PPSSPP}UI/
+cp ui_atlas.zim ${PPSSPP}build-ios/assets/
+cp ui_atlas.zim ${PPSSPP}assets/
+mv ui_atlas.zim ${PPSSPP}android/assets/

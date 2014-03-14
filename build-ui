@@ -1,0 +1,4 @@
+export PPSSPPROOT="/Users/vm_mac/Desktop/ppsspp"
+cat chinese-ui.txt $PPSSPPROOT/lang/zh_CN.ini $PPSSPPROOT/lang/zh_TW.ini $PPSSPPROOT/lang/ja_JP.ini > chinese.txt
+cat korean-ui.txt $PPSSPPROOT/lang/ko_KR.ini > korean.txt 
+./atlastool atlasscript.txt ui 8888

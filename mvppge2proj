@@ -1,0 +1,6 @@
+export PPSSPP="/Users/vm_mac/Desktop/ppsspp/" 
+mv ppge_atlas.cpp ${PPSSPP}Core/Util/
+mv ppge_atlas.h ${PPSSPP}Core/Util/
+cp ppge_atlas.zim ${PPSSPP}build-ios/assets/
+cp ppge_atlas.zim ${PPSSPP}assets/
+mv ppge_atlas.zim ${PPSSPP}android/assets/
